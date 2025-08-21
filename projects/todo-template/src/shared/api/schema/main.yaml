@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: Todo List API
+  description: API for todo list
+  version: 1.0.0
+
+paths:
+  # Личный список
+  /tasks:
+    get:
+      $ref: './endpoints/task.yaml#/getAllTasks'
+    post:
+      $ref: './endpoints/task.yaml#/createTask'
+    delete:
+      $ref: './endpoints/task.yaml#/deleteAllTasks'
+
+  /tasks/{taskId}:
+    get:
+      $ref: './endpoints/task.yaml#/getTask'
+    patch:
+      $ref: './endpoints/task.yaml#/updateTask'
+    delete:
+      $ref: './endpoints/task.yaml#/deleteTask'
