@@ -1,0 +1,14 @@
+{
+	"name": "todo-sync",
+	"version": "0.0.0",
+	"private": true,
+	"packageManager": "yarn@4.9.3",
+	"workspaces": [
+		"frontend",
+		"backend"
+	],
+	"scripts": {
+		"dev": "yarn workspaces foreach --all --parallel -i run dev",
+		"generate:types": "tsx spec/generate-types.ts spec/asyncapi.yaml -o backend/src/types/generated.ts frontend/src/shared/api/schemas/generated.ts"
+	}
+}
